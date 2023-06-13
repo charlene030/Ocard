@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type='text/css' href="css/bootstrap.min.css">
+    <title>Screen 4</title>
+    <link rel="stylesheet" type="text/css" href="screen4.css" />
+  </head>
+  <body style="height: 900px;">
+    <div class="arrow">
+      <img src="arrow.jpg" onclick="previousPage()">
+    </div>
+    <div class="top-title">
+      <div>Welcome</div>
+    </div>
+    <div class="sub-title">
+      <div>Please enter your data to continue.</div>
+    </div>
+    <div class="container">
+      <div class="contain">
+        <div class="title">
+          Username
+        </div>
+        <input  type="text"  id="uname">
+      </div>  
+      
+      <div  class="contain">
+        <div class="title" >
+          Password
+        </div>
+        <input  type="text" id="passwrd">
+      </div>
+      <div class="red">
+        <div class="forget">Forget password</div>
+      </div>
+      <div class="form-check form-switch form">      
+        <div>
+          <label class="form-check-label" for="flexSwitchCheckChecked">Remember me</label>
+        </div>
+        <div>
+          <input style="background-color: rgb(75, 199, 109);border: 0;" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="contain term">
+      <div>By connecting your account confirm that you agree with our
+        <span>Term an Condition.</span>
+      </div>
+    </div>
+
+    <div class="footer" onclick="login()">
+      Login
+    </div>
+    
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      document.getElementById('uname').value=localStorage.getItem('username');
+      function login(){        
+            
+        var userPW = document.getElementById('passwrd');
+        var pword = userPW.value;
+        
+        if(pword == localStorage.getItem('password')){
+          alert("Login Successfully!");
+        }
+        else{
+          alert("Wrong Password!");
+        }
+      };
+      function previousPage(){
+        window.location.replace("screen3.html");
+      }
+    </script>
+  </body>
+</html>

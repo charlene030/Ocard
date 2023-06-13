@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type='text/css' href="css/bootstrap.min.css">
+    <title>Screen 13</title>
+    <link rel="stylesheet" type="text/css" href="screen13.css" />
+  </head>
+  <body style="height: 900px;">
+    <div class="arrow">
+      <img src="arrow.jpg" onclick="lastPage()">
+    </div>
+    <div class="top-title w-100">
+      <div>Address</div>
+    </div>
+    <div class="container">
+      <div class="contain">
+        <div class="title">
+          Name
+        </div>
+        <input  type="text" placeholder="Mrh Raju" >
+      </div>
+  
+      <div  class="contain con2" style="display: flex;">
+        <div class="block">
+          <div class="title">
+            Country
+          </div>
+          <input class="w-100" type="text" placeholder="Bangladesh">
+        </div>
+        <div class="block">
+          <div class="title">
+            City
+          </div>
+          <input class="w-100" type="text" placeholder="Sylhet" >
+        </div>
+      </div>
+      <div  class="contain">
+        <div class="title">
+          Phone Number
+        </div>
+        <input  type="text" placeholder="+880 1453-987533" >
+      </div>
+      <div class="contain" >
+        <div class="title">
+          Address
+        </div>
+        <input class="w-100" type="text" placeholder="Chhatak, Sunamgonj 12/8AB" >
+      </div>
+      <div class="form-check form-switch form w-100">      
+        <div>
+          <label class="form-check-label" for="flexSwitchCheckChecked">Save as primary address</label>
+        </div>
+        <div>
+          <input style="background-color: rgb(75, 199, 109);border: 0;" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="footer w-100">
+      Save Address
+    </div>
+    
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      function lastPage(){
+        window.location.replace("screen12.html");
+      }
+    </script>
+  </body>
+</html>

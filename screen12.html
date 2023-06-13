@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type='text/css' href="css/bootstrap.min.css">
+    <title>Screen 12</title>
+    <link rel="stylesheet" type="text/css" href="screen12.css" />
+  </head>
+  <body style="height: 950px;" >
+    <div class="arrow">
+      <img src="arrow.jpg">
+    </div>
+    <div class="top-title w-100">
+      <div>Cart</div>
+    </div>
+    <div class="container px-4">
+      <div class="box w-100 mb-3">
+        <img src="https://fakeimg.pl/100x100/">
+        <div class="info">
+          <div class="title">Men's Tie-Dye T-Shirt<br>Nike Sportswear</div>
+          <div class="price py-2">$45 (-$4.00 Tax)</div>
+          <div class="quantity">
+            <div class="plus-minus" onclick="minus(1)">
+            <div>-</div>
+            </div>
+            <div class="px-3 py-1"  id="pd1-quantity">
+              1
+            </div>            
+            <div class="plus-minus" onclick="plus(1)">
+            +
+            </div>
+          </div>
+        </div>     
+
+      </div>
+      <div class="box w-100">
+        <img src="https://fakeimg.pl/100x100/">
+        <div class="info">
+          <div class="title">Men's Tie-Dye T-Shirt<br>Nike Sportswear</div>
+          <div class="price py-2">$45 (-$4.00 Tax)</div>
+          <div class="quantity">
+            <div class="plus-minus" onclick="minus(2)">
+            <div>-</div>
+            </div>
+            <div class="px-3 py-1" id="pd2-quantity">
+              1
+            </div>            
+            <div class="plus-minus" onclick="plus(2)">
+            +
+            </div>
+          </div>
+        </div>     
+
+      </div>
+      <div class="contain">
+        <div class="top w-100">
+          <div class="title">
+            Delivery Address
+          </div>
+          <div class="arrow90">
+            <img src="arrow90.jpg" onclick="changeAddress()">
+          </div>
+        </div>
+        <div class="p-3">
+          <div class="address">
+            Chhatak, Sunamgonj 12/8AB
+          </div>
+          <div class="city">
+            Sylhet
+          </div>
+          
+          <img src="check.png" class="check">
+          
+        </div>       
+       
+      </div> 
+      <div class="contain">
+        <div class="top w-100">
+          <div class="title">
+            Payment Method
+          </div>
+          <div class="arrow90">
+            <img src="arrow90.jpg">
+          </div>
+        </div>
+        <div class="p-3">
+          <div class="address">
+            Visa Classic
+          </div>
+          <div class="city">
+            **** 7690
+          </div>          
+          <img src="check.png" class="check">
+          
+        </div>       
+       
+      </div> 
+      <div class="contain">
+        <div class="top w-100">
+          <div class="title">
+            Order Info
+          </div>          
+        </div>
+        <div class="p-3">          
+          <div class="order-text">
+            <div class="block">
+              <div>Subtotal</div>
+              <div class="num" id="subtotal">$110</div>
+            </div>
+            <div class="block">
+              <div>Shipping cost</div>
+              <div class="num" id="shipping-cost ">$10</div>
+            </div>
+            <div class="block">
+              <div>Total</div>
+              <div class="num" id="total">$120</div>
+            </div>
+          </div>
+          
+        </div>       
+       
+      </div> 
+    </div>
+
+    <div class="footer w-100">
+      Checkout
+    </div>
+    
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      function itemPrice(){
+        var p1=document.getElementById(`pd1-quantity`).innerText;
+        var p2=document.getElementById(`pd2-quantity`).innerText;
+        p1=parseInt(p1, 10);
+        p1*=45;
+        p2=parseInt(p2, 10);
+        p2*=45;
+        //p2+=p1;
+        document.getElementById('subtotal').innerText='$'+(p1+p2);
+        //p2+=10;
+        document.getElementById('total').innerText='$'+(p1+p2+10);
+      }
+      itemPrice();
+
+      /*function totalPrice(){
+        var p=document.getElementById(`pd1-quantity`).innerText;
+        p=parseInt(p, 10);
+        p*=45;
+        document.getElementById('subtotal').innerText='$'+p;
+      }
+      totalPrice();*/
+
+
+      function changeAddress(){
+        window.location.replace("screen13.html");
+      }
+      var num=0;
+      function minus(num){        
+          var p=document.getElementById(`pd${num}-quantity`).innerText;
+          p=parseInt(p, 10);
+          if(p>0){
+            p-=1;
+            document.getElementById(`pd${num}-quantity`).innerText=p; 
+            itemPrice();
+          }                 
+        
+      }
+      function plus(num){
+          var p=document.getElementById(`pd${num}-quantity`).innerText;
+          p=parseInt(p, 10);
+          p+=1;
+          document.getElementById(`pd${num}-quantity`).innerText=p;
+          itemPrice();
+      }
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type='text/css' href="css/bootstrap.min.css">
+    <title>Screen 3</title>
+    <link rel="stylesheet" type="text/css" href="screen3.css" />
+  </head>
+  <body style="height: 900px;">
+    <div class="arrow">
+      <img src="arrow.jpg">
+    </div>
+    <div class="top-title">
+      <div>Sign Up</div>
+    </div>
+    <div class="container">
+      <div class="contain">
+        <div class="title">
+          Username
+        </div>
+        <input  type="text"  id="uname">
+      </div>  
+      
+      <div  class="contain">
+        <div class="title" >
+          Password
+        </div>
+        <input  type="text" id="passwrd">
+      </div>
+      <div class="contain" >
+        <div class="title">
+          Email Address
+        </div>
+        <input class="w-100" type="text" id="email">
+      </div>
+      <div class="form-check form-switch form">      
+        <div>
+          <label class="form-check-label" for="flexSwitchCheckChecked">Remember me</label>
+        </div>
+        <div>
+          <input style="background-color: rgb(75, 199, 109);border: 0;" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="footer" onclick="submit()">
+      <div>Sign Up</div>
+    </div>
+    
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      function submit(){
+        var userName = document.getElementById('uname');
+        var uname = userName.value;
+        var userEmail = document.getElementById('email');
+        var email = userEmail.value;
+        var userPW = document.getElementById('passwrd');
+        var pword = userPW.value;
+        //console.log(uname);
+        if(uname != "" && email != "" && pword != ""){
+          //alert("Good!");
+          localStorage.setItem('username', uname);
+          localStorage.setItem('password', pword);
+          window.location.replace("screen4.html");
+        }
+        else{
+          alert("Please input correctly!");
+        }
+      };
+    </script>
+  </body>
+</html>
